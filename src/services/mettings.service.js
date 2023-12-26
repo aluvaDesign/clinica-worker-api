@@ -36,7 +36,7 @@ export default class MettingsService {
     });
 
     do {
-      // await new Promise((resolve) => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 500));
       const result = await this._documentRepository.traverse(continuationToken);
 
       let itemsTotalProcess = result.resources.length;
@@ -60,7 +60,8 @@ export default class MettingsService {
           emitData.push({ document, clinicaRecord: null });
         } else {
           const clinicaRecords = await this._clinicaRecordRepository.getRecordByLoteAndFactura(document.nroLote, document.facturaNro);
-
+          console.log(`📄 Total documents obtained: ${clinicaRecords.length}`);
+          
           if (clinicaRecords.length) {
             console.log('❤️ Data clínica record match with data document, adding data to memory');
             emitData.push({ document, clinicaRecord: clinicaRecords[0] });
