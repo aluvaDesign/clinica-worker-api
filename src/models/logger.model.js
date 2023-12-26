@@ -13,4 +13,4 @@ const LoggerSchema = new Schema(
   { timestamps: true }
 );
 
-export default model('logger', LoggerSchema);
+export default model('log', LoggerSchema);
