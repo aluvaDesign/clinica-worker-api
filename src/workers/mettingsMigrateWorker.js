@@ -135,7 +135,7 @@ async function workerProcess(data) {
           fechaEfectivaOrden: document.fechaEfectivaOrden ? helpers.normalizeDateTime(document.fechaEfectivaOrden) : null,
           fechaMensaje: document.fechaMensaje ? helpers.normalizeDateTime(document.fechaMensaje) : null,
           archivos,
-          historialDevolucion: document.historialDevolucion ? normalizeHistoryDevolutions(document.historialDevolucion) : [],
+          historialDevoluciones: document.historialDevolucion ? normalizeHistoryDevolutions(document.historialDevolucion) : [],
           usuario: setInput.string(document.userName ?? null),
           fechaRegistro: helpers.normalizeDateTime(document.fechaAtencion, 2),
           fechaModificacion: helpers.normalizeDateTime(document.fechaAtencion, 2),
