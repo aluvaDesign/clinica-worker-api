@@ -130,7 +130,7 @@ async function workerProcess(data) {
             id: setInput.string(document.codigoServicioOrigen),
             descripcion: setInput.string(document.origenServicio),
           },
-          origenSistema: setInput.string(document.origenServicio),
+          origenSistema: setInput.string(document.origenDescripcion),
           fechaAtencion: helpers.normalizeDateTime(document.fechaAtencion, 2),
           fechaEfectivaOrden: document.fechaEfectivaOrden ? helpers.normalizeDateTime(document.fechaEfectivaOrden) : null,
           fechaMensaje: document.fechaMensaje ? helpers.normalizeDateTime(document.fechaMensaje) : null,
